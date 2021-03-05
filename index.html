@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <style>.rainbow { 
+  height: 100%;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}</style>
+    <script src="launchdarkly-html-sdk.js"></script>
+    <meta property="ld:clientid" content="604009d2b8b2810eddcc36db">
+<meta property="ld:user:key" content="test" >
+<meta property="ld:user:name" content="hi" data-private>
+<meta property="ld:user:groups" content="group1" >
+<meta property="ld:user:groups" content="group2">
+
+    <!-- Adds the "blue-bg" class to this element
+    when the "blue-panel" flag evaluates to true 
+-->
+<style>
+  .blue-bg {
+    background: blue;
+  }
+  </style>
+  </head>
+  <body>
+<div data-ld data-ld-class="blue-bg">
+<h1 data-ld-text="greeting" data-ld-style-color="color">Fallback value<h1>
+
+</div>
+
+<!-- after successful connection to LaunchDarkly or a proxy, this
+    will evaluate the "h1-content" flag and replace the
+    current inner text with the result; otherwise, the existing
+    inner text will remain
+-->
+  </body>
+  </html>
